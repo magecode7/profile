@@ -1,0 +1,21 @@
+@font-face {
+    font-family: PixelFont;
+    src: url(fonts/pixeltimes.ttf);
+}
+
+@keyframes blinking { from, to { visibility: hidden; } 50% { visibility: visible; } }
+
+body { background-color: blue; }
+body { background: linear-gradient(to bottom, blue, blue 50%, #4a44ff 50%, #4a44ff); background-size: 100% 4px; }
+
+div { padding:20px 20px 20px 20px; }
+
+h1 { color: white; font-family: 'PixelFont'; text-align: center; }
+h1 { text-shadow: 0 0 5px white; font-size: 50px;}
+h1::after { content: "_"; font-weight: bold; animation: blinking 1s step-end infinite; }
+
+p { color: white; font-family: 'PixelFont'; text-shadow: 0 0 5px white; }
+
+a { color: white; font-family: 'PixelFont'; text-shadow: 0 0 5px white; }
+
+li { color: white; list-style-type: square; text-shadow: 0 0 5px white; }

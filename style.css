@@ -3,19 +3,61 @@
     src: url(fonts/pixeltimes.ttf);
 }
 
-@keyframes blinking { from, to { visibility: hidden; } 50% { visibility: visible; } }
+@keyframes blinking { 
+    from, to { visibility: hidden; } 50% { visibility: visible; } 
+}
 
-body { background-color: blue; }
-body { background: linear-gradient(to bottom, blue, blue 50%, #4a44ff 50%, #4a44ff); background-size: 100% 4px; }
+body { 
+    background-color: blue; 
+    background: linear-gradient(to bottom, blue, blue 50%, #4a44ff 50%, #4a44ff); 
+    background-size: 100% 4px; 
+}
 
-div { padding:20px 20px 20px 20px; }
+div { 
+    text-align: center;
+    padding: 20px 20px 20px 20px; 
+}
 
-h1 { color: white; font-family: 'PixelFont'; text-align: center; }
-h1 { text-shadow: 0 0 5px white; font-size: 50px;}
-h1::after { content: "_"; font-weight: bold; animation: blinking 1s step-end infinite; }
+header { 
+    color: white; 
+    font-family: 'PixelFont'; 
+    text-align: center; 
+    text-shadow: 0 0 5px white; 
+    font-size: 50px;
+}
+header::after { 
+    content: "_"; 
+    animation: blinking 1s step-end infinite; }
 
-p { color: white; font-family: 'PixelFont'; text-shadow: 0 0 5px white; }
+main { 
+    color: white; 
+    font-family: 'PixelFont'; 
+    text-shadow: 0 0 5px white; 
+}
 
-a { color: white; font-family: 'PixelFont'; text-shadow: 0 0 5px white; }
+footer { 
+    color: white; 
+    font-family: 'PixelFont'; 
+    text-shadow: 0 0 5px white; 
+    padding: 10px;
+}
 
-li { color: white; list-style-type: square; text-shadow: 0 0 5px white; }
+a { 
+    color: white; 
+    font-family: 'PixelFont'; 
+    text-shadow: 0 0 5px white; 
+    margin: 0 10px 0 0; 
+}
+
+li { 
+    color: white; 
+    list-style-type: none; 
+    text-shadow: 0 0 5px white; 
+    display: inline;
+    padding: 10px;
+}
+
+img {
+    -webkit-filter: drop-shadow(0 0 2px white); 
+    filter: drop-shadow(0 0 2px white); 
+}

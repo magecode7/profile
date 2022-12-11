@@ -1,0 +1,103 @@
+@font-face {
+    font-family: PixelFont;
+    src: url(../fonts/pixeltimes.ttf);
+}
+
+@keyframes blinking { 
+    from, to { visibility: hidden; } 50% { visibility: visible; } 
+}
+
+::selection {
+    background: var(--fore-color-1);
+    color: var(--fore-color-2);
+  }
+
+:root {
+    --back-color-1: rgba(0, 0, 0, 0.1);
+    --back-color-2: rgba(0, 0, 255, 0.2);
+    --fore-color-1: white;
+    --fore-color-2: rgb(0, 0, 100);
+    --bloom-filter: drop-shadow(0 0 5px white); 
+}
+
+body { 
+    background-color: black; 
+    overflow: hidden;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    min-height: 100vh;
+    margin: 0;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, var(--back-color-1), var(--back-color-1) 50%, var(--back-color-2) 50%, var(--back-color-2)); 
+    background-size: 100% 5px; 
+    pointer-events: none;
+}
+
+div { 
+    text-align: center;
+    padding: 20px 20px 20px 20px; 
+}
+
+header { 
+    color: var(--fore-color-1); 
+    font-family: 'PixelFont'; 
+    text-align: center; 
+    filter: var(--bloom-filter);
+    font-size: 50px;
+    flex: 0;
+}
+
+.text_type::after { 
+    content: "_"; 
+    animation: blinking 1s step-end infinite; }
+
+main { 
+    color: var(--fore-color-1); 
+    font-family: 'PixelFont'; 
+    flex: 1;
+    filter: var(--bloom-filter);
+}
+
+footer { 
+    color: var(--fore-color-1); 
+    font-family: 'PixelFont'; 
+    filter: var(--bloom-filter);
+    padding: 10px;
+    flex: 0;
+}
+
+a { 
+    color: var(--fore-color-1); 
+    font-family: 'PixelFont'; 
+    margin: 0 10px 0 0; 
+}
+
+li { 
+    color: var(--fore-color-1); 
+    list-style-type: none; 
+    display: inline;
+    padding: 10px;
+}
+
+button {
+    border: solid 2px;
+    border-color: var(--fore-color-1);
+    background: none;
+    padding: 10px 20px;
+    font-family: 'PixelFont';
+    color: var(--fore-color-1);
+    cursor: pointer;
+}
+
+button:hover {
+    background: fixed;
+    background-color: var(--fore-color-1);
+    color: var(--fore-color-2);
+}

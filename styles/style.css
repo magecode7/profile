@@ -41,8 +41,7 @@ body::after {
 }
 
 div { 
-    text-align: center;
-    padding: 20px 20px 20px 20px; 
+    text-align: center; 
 }
 
 header { 
@@ -52,11 +51,13 @@ header {
     filter: var(--bloom-filter);
     font-size: 50px;
     flex: 0;
+    margin: 20px;
 }
 
 .text_type::after { 
     content: "_"; 
-    animation: blinking 1s step-end infinite; }
+    animation: blinking 1s step-end infinite; 
+}
 
 main { 
     color: var(--fore-color-1); 
@@ -69,7 +70,6 @@ footer {
     color: var(--fore-color-1); 
     font-family: 'PixelFont'; 
     filter: var(--bloom-filter);
-    padding: 10px;
     flex: 0;
 }
 
@@ -90,14 +90,25 @@ button {
     border: solid 2px;
     border-color: var(--fore-color-1);
     background: none;
-    padding: 10px 20px;
+    padding: 5px 10px;
     font-family: 'PixelFont';
+    font-size: 12px;
     color: var(--fore-color-1);
     cursor: pointer;
+    position: absolute;
+    right: 0%;
 }
 
 button:hover {
     background: fixed;
     background-color: var(--fore-color-1);
     color: var(--fore-color-2);
+}
+
+canvas {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    width: 100%;
 }

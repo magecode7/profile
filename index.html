@@ -10,15 +10,19 @@
     <body>
         <header>
             magecode
+            <button onclick="playMusic()">
+                Play/Pause
+            </button>
         </header>
         <main>
             <div>
-                <div class="text_type" id="typed_text">
-                    Welcome to my profile!
+                <div class="text_type" id="typewriter">
+                    Welcome to my profile!<br></br>
+                    I am a beginner developer from Russia.<br></br>
+                    I work in Python and C# programming languages.<br></br>
+                    I also do reverse engineering (IDA one love).<br></br>
+                    Besides I'm interested in anime and IT.
                 </div>
-                <button onclick="playMusic()">
-                    Play/Pause
-                </button>
             </div>
         </main>
         <footer>
@@ -29,9 +33,13 @@
                 <a href="https://vk.com/magecode">VK</a></li>
                 <img src="images/logo_github.png" width="30px" height="30px">
                 <a href="https://github.com/magecode7">GitHub</a></li>
+            <div>
+                <canvas id="audio_visual" height="50px"></canvas>
             </div>
         </footer>
 
         <script src="scripts/main.js"></script>
+        <script src="scripts/typewriter.js"></script>
+        <script src="scripts/visual.js"></script>
     </body>
 </html>

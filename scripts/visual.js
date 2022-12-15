@@ -22,16 +22,30 @@ let data = new Uint8Array(analyser.frequencyBinCount);
 requestAnimationFrame(loopingFunction);
 
 
+input_audio.onchange = function(e){
+    audioPlayer.src = URL.createObjectURL(this.files[0]);
+    // not really needed in this exact case, but since it is really important in other cases,
+    // don't forget to revoke the blobURI when you don't need it
+    audioPlayer.onend = function(e) {
+      URL.revokeObjectURL(this.src);
+    }
+    audioPlayer.play();
+    isPlaying = true;
+  }
+
 function playMusic() {
-    audioPlayer.src = musics[Math.round(Math.random() * (musics.length - 1))]
-    audioPlayer.load()
+    if (audioPlayer.src == '')
+        audioPlayer.src = musics[Math.round(Math.random() * (musics.length - 1))]
+    audioPlayer.load();
 
-    if (isPlaying)
+    if (isPlaying) {
         audioPlayer.pause();
-    else
+        isPlaying = false;
+    }
+    else {
         audioPlayer.play();
-
-    isPlaying = !isPlaying
+        isPlaying = true;
+    }
 }
 
 function loopingFunction(){
@@ -43,19 +57,19 @@ function loopingFunction(){
 function draw(data){
     data = [...data];
     ctx.clearRect(0,0,canvas.width,canvas.height);
-    let space = canvas.width / data.length;
+    let space = canvas.width / data.length / 2;
     data.forEach((value,i)=>{
         // if (i % 8 != 0)
         //     return;
 
         ctx.beginPath();
-        ctx.strokeStyle = "white";
+        ctx.strokeStyle = "rgba(255, 255, 255, 1";
 
         ctx.moveTo(space*i,canvas.height); //x,y
-        ctx.lineTo(space*i,canvas.height-value * canvas.height/200); //x,y        
+        ctx.lineTo(space*i,canvas.height-value * canvas.height/300); //x,y        
         
         ctx.moveTo(canvas.width - space*i,canvas.height); //x,y
-        ctx.lineTo(canvas.width - space*i,canvas.height-value * canvas.height/200); //x,y
+        ctx.lineTo(canvas.width - space*i,canvas.height-value * canvas.height/300); //x,y
         
         ctx.stroke();
     })

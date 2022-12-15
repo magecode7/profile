@@ -10,9 +10,6 @@
     <body>
         <header>
             magecode
-            <button onclick="playMusic()">
-                Play/Pause
-            </button>
         </header>
         <main>
             <div>
@@ -20,8 +17,16 @@
                     Welcome to my profile!<br></br>
                     I am a beginner developer from Russia.<br></br>
                     I work in Python and C# programming languages.<br></br>
-                    I also do reverse engineering (IDA one love).<br></br>
-                    Besides I'm interested in anime and IT.
+                    I also do reverse engineering (IDA one love).
+                </div>
+                <div>
+                    <button onclick="playMusic()">
+                        Play/Pause
+                    </button>
+                </div>
+                <div>
+                    <label for="input_audio" class="underline">Select music</label>
+                    <input type="file" id="input_audio" hidden accept=".mp3,.ogg,.wav">
                 </div>
             </div>
         </main>
@@ -34,7 +39,7 @@
                 <img src="images/logo_github.png" width="30px" height="30px">
                 <a href="https://github.com/magecode7">GitHub</a></li>
             <div>
-                <canvas id="audio_visual" height="50px"></canvas>
+                <canvas id="audio_visual" height="100"></canvas>
             </div>
         </footer>
 

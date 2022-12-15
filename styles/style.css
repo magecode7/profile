@@ -54,6 +54,10 @@ header {
     margin: 20px;
 }
 
+.text_type {
+    height: 150px;
+}
+
 .text_type::after { 
     content: "_"; 
     animation: blinking 1s step-end infinite; 
@@ -92,11 +96,8 @@ button {
     background: none;
     padding: 5px 10px;
     font-family: 'PixelFont';
-    font-size: 12px;
     color: var(--fore-color-1);
     cursor: pointer;
-    position: absolute;
-    right: 0%;
 }
 
 button:hover {
@@ -106,9 +107,18 @@ button:hover {
 }
 
 canvas {
-    height: 50px;
+    height: 100px;
     display: flex;
     flex-direction: row;
     flex: 1;
     width: 100%;
+}
+
+input[type="file"] {
+    font-family: 'PixelFont';
+}
+
+.underline {
+    text-decoration: underline;
+    cursor: pointer;
 }

@@ -7,6 +7,15 @@
     from, to { visibility: hidden; } 50% { visibility: visible; } 
 }
 
+@keyframes animatedBackground {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: 0 100px;
+    }
+}
+
 ::selection {
     background: var(--fore-color-1);
     color: var(--fore-color-2);
@@ -17,7 +26,7 @@
     --back-color-2: rgba(0, 0, 255, 0.2);
     --fore-color-1: white;
     --fore-color-2: rgb(0, 0, 100);
-    --bloom-filter: drop-shadow(0 0 5px white); 
+    --bloom-filter: drop-shadow(0 0 10px white); 
 }
 
 body { 
@@ -36,8 +45,11 @@ body::after {
     width: 100vw;
     height: 100vh;
     background: linear-gradient(to bottom, var(--back-color-1), var(--back-color-1) 50%, var(--back-color-2) 50%, var(--back-color-2)); 
-    background-size: 100% 5px; 
+    background-size: 100% 10px; 
     pointer-events: none;
+    background-repeat: repeat;
+    animation: animatedBackground 5s linear infinite;
+
 }
 
 div { 
@@ -122,3 +134,4 @@ input[type="file"] {
     text-decoration: underline;
     cursor: pointer;
 }
+

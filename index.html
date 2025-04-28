@@ -1,45 +1,55 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>magecode</title>
-        <link rel="stylesheet" href="styles/style.css" type="text/css"/>
-        <link rel="icon" href="images/logo_t.png"/>
-        <script src="https://js.cx/libs/animate.js"></script>
-    </head>
-    <body>
-        <header>
-            magecode
-        </header>
-        <main>
-            <div>
-                <div class="text_type" id="typewriter">
-                    Welcome to my profile!<br></br>
-                    I am coding in Python and C# programming languages.<br></br>
-                    I also do reverse engineering.
-                </div>
-                <div>
-                    <button onclick="playMusic()">
-                        Play/Pause
-                    </button>
-                </div>
-                <div>
-                    <label for="input_audio" class="underline">Select music</label>
-                    <input type="file" id="input_audio" hidden accept=".mp3,.ogg,.wav">
-                </div>
-            </div>
-        </main>
-        <footer>
-            <div>
-                <a href="https://t.me/magecode"><img src="images/logo_tg.png" width="30px" height="30px"></a>
-                <a href="https://github.com/magecode7"><img src="images/logo_github.png" width="30px" height="30px"></a></li>
-            <div>
-                <canvas id="audio_visual" height="100"></canvas>
-            </div>
-        </footer>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>magecode</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/logo_t.png" />
+    <script src="https://js.cx/libs/animate.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>magecode</h1>
+    </header>
 
-        <script src="scripts/main.js"></script>
-        <script src="scripts/typewriter.js"></script>
-        <script src="scripts/visual.js"></script>
-    </body>
+    <main>
+      <section class="intro">
+        <div class="text_type" id="typewriter">
+          Welcome to my profile!
+          I am coding in Python and C# programming languages.
+          I also do reverse engineering.
+        </div>
+
+        <div class="controls">
+          <button onclick="playMusic()">Play/Pause</button>
+          <label for="input_audio" class="underline">Select music</label>
+          <input type="file" id="input_audio" hidden accept=".mp3,.ogg,.wav" />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="social-links">
+        <a href="https://t.me/magecode" target="_blank" rel="noopener">
+          <img src="images/logo_tg.png" alt="Telegram" width="30" height="30" />
+        </a>
+        <a href="https://github.com/magecode7" target="_blank" rel="noopener">
+          <img
+            src="images/logo_github.png"
+            alt="GitHub"
+            width="30"
+            height="30"
+          />
+        </a>
+      </div>
+      <canvas id="audio_visual" class="audio-viz" height="100"></canvas>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/typewriter.js"></script>
+    <script src="scripts/visual.js"></script>
+
+    <canvas class="glitch"></canvas>
+  </body>
 </html>
